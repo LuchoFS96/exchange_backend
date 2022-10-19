@@ -1,21 +1,9 @@
 const { Router } = require("express");
-const Crypto = require("../models/Crypto");
+// const Crypto = require("../models/Crypto");
+const coinsRouter = require("./coins");
 
-const router = new Router();
+const router = Router();
 
-router.get("/", (req, res) => {
-  Crypto.create({
-    name: "bitcoin",
-    short: "btc",
-    valueUSD: 3,
-  });
-  res.send("hola");
-});
-
-router.get("/todo", (req, res) => {
-  Crypto.findAll().then((cryptos) => {
-    res.json(cryptos);
-  });
-});
+router.use("/coins", coinsRouter);
 
 module.exports = router;
