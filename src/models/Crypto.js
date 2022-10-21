@@ -20,6 +20,10 @@ const Crypto = sequelize.define("Crypto", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  image: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
 });
 
 module.exports = Crypto;

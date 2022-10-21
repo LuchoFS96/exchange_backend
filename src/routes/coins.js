@@ -4,6 +4,7 @@ const router = Router();
 const axios = require("axios");
 const API_URL = process.env.API_URL;
 const API_USD_URL = process.env.API_USD_URL;
+
 const combine = require("../controller/combine.js");
 const Crypto = require("../models/Crypto");
 
@@ -16,6 +17,7 @@ router.get("/", async (req, res, next) => {
       name: finalArray[i][1],
       short: finalArray[i][0],
       valueUSD: parseInt(finalArray[i][2]),
+      image: finalArray[i][3],
     });
   }
   // console.log(finalArray);
